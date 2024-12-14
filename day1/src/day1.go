@@ -37,9 +37,9 @@ func (d *DayOne) CalculateTotalSimilarityScore() int {
 	for _, val := range leftList {
 		if _, ok := occurrences[val]; ok {
 			occurrences[val][0]++
-			continue
+		} else {
+			occurrences[val] = []int{1, 0}
 		}
-		occurrences[val] = []int{1, 0}
 	}
 
 	// count occurrences in in right list
